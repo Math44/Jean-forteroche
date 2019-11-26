@@ -6,7 +6,6 @@ require_once 'Vue/Vue.php';
 
 class Routeur {
     private $ctrlArticle;
-    private $ctrlContact;
     private $ctrlAdmin;
 
     public function __construct() {
