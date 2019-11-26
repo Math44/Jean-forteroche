@@ -1,0 +1,25 @@
+#Fichier .htaccess : /Jean-Forteroche-Blog/
+
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteBase /Jean-Forteroche-Blog/
+
+#Partie Blog :
+RewriteRule ^Accueil$ index.php [L] 
+RewriteRule ^Blog$ index.php?action=blog [L]
+RewriteRule ^Article-([0-9]+)$ index.php?action=article&id=$1 [L]
+RewriteRule ^Signaler-Commentaire-([0-9]+)$ index.php?action=reportComment&id=$1 [L]
+
+#Partie admin :
+RewriteRule ^Connexion$ index.php?action=login [L]
+RewriteRule ^Deconnexion$ index.php?action=deconnecter [L]
+
+RewriteRule ^Admin-Commentaires$ index.php?action=admin [L]
+RewriteRule ^Admin-Valider-Commentaire-([0-9]+)$ index.php?action=cancelReportComment&id=$1 [L]
+RewriteRule ^Admin-Supprimer-Commentaire-([0-9]+)$ index.php?action=deleteComment&id=$1 [L]
+
+RewriteRule ^Admin-Articles$ index.php?action=listAdminArticle [L]
+RewriteRule ^Admin-Modifier-Article-([0-9]+)$ index.php?action=viewUpdateArticle&id=$1 [L]
+RewriteRule ^Admin-Supprimer-Article-([0-9]+)$ index.php?action=deleteArticle&id=$1 [L]
+RewriteRule ^Admin-Ajouter-Article$ index.php?action=newAdminArticle [L]
